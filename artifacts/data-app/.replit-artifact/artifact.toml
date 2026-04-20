@@ -12,20 +12,10 @@ version = "1.0.0"
 [[services]]
 name = "web"
 paths = [ "/" ]
-localPort = 24452
+localPort = 5000
 
 [services.development]
-run = "pnpm --filter @workspace/data-app run dev"
-
-[services.production]
-build = [ "pnpm", "--filter", "@workspace/data-app", "run", "build" ]
-publicDir = "artifacts/data-app/dist/public"
-serve = "static"
-
-[[services.production.rewrites]]
-from = "/*"
-to = "/index.html"
+run = "cd /home/runner/workspace/artifacts/data-app && streamlit run app.py --server.port 5000"
 
 [services.env]
-PORT = "24452"
-BASE_PATH = "/"
+PORT = "5000"

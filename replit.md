@@ -16,6 +16,14 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
 
+## Python / Streamlit App
+
+- **Entry point**: `artifacts/data-app/app.py`
+- **Config**: `artifacts/data-app/.streamlit/config.toml`
+- **Port**: 5000
+- **Run command**: `cd /home/runner/workspace/artifacts/data-app && streamlit run app.py --server.port 5000`
+- **Installed packages**: streamlit, pandas, numpy (via uv/pip in `.pythonlibs`)
+
 ## Key Commands
 
 - `pnpm run typecheck` — full typecheck across all packages
